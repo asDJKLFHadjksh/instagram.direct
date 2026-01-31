@@ -1,14 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="0; url=https://kuhyakuya.com/" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Redirecting...</title>
-    <link rel="canonical" href="https://kuhyakuya.com/" />
-    <link rel="icon" href="https://kuhyakuya.com/favicon.ico" />
-  </head>
-  <body>
-    <p>Redirecting to <a href="https://kuhyakuya.com/">https://kuhyakuya.com/</a>.</p>
-  </body>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="refresh" content="0; url=./" />
+  <title>Redirecting…</title>
+  <link rel="icon" type="image/svg+xml" href="img/favicon_off_v2.svg">
+  <style>
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: #0d0d0f;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <p>Mengarahkan ke link yang benar…</p>
+
+  <script>
+    const path = location.pathname;
+    const segments = path.split('/').filter(Boolean);
+
+    if (segments.length >= 2) {
+      sessionStorage.setItem('show404Banner', '1');
+      sessionStorage.setItem('badPath', path);
+    }
+
+    location.replace('./');
+  </script>
+</body>
 </html>
